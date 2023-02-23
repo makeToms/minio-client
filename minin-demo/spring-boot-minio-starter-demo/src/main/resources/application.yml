@@ -1,0 +1,7 @@
+spring:
+  io:
+    minio:
+      host: 114.132.177.185
+      port: 9000
+      username: minioadmin
+      password: minioadmin

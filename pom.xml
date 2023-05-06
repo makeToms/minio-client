@@ -10,10 +10,13 @@
     <modules>
         <module>minio-spring</module>
         <module>spring-boot-minio-starter</module>
+        <module>minin-demo</module>
+        <module>minin-demo/minio-spring-demo</module>
+        <module>minin-demo/spring-boot-minio-starter-demo</module>
     </modules>
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <commons-pool2.version>2.6.2</commons-pool2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

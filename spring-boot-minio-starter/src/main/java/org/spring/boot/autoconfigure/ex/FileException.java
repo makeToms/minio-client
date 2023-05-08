@@ -1,6 +1,6 @@
-package org.spring.boot.autoconfiguration.ex;
+package org.spring.boot.autoconfigure.ex;
 
-import org.spring.boot.autoconfiguration.enums.ExceptionEnum;
+import org.spring.boot.autoconfigure.enums.ExceptionEnum;
 
 /**
  * @Author make_

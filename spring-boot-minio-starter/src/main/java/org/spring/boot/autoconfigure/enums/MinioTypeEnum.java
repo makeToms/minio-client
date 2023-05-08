@@ -1,7 +1,7 @@
-package org.spring.boot.autoconfiguration.enums;
+package org.spring.boot.autoconfigure.enums;
 
 
-import org.spring.boot.autoconfiguration.ex.FileException;
+import org.spring.boot.autoconfigure.ex.FileException;
 
 /**
  * 通过文件扩展名获取ContentType

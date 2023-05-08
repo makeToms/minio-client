@@ -1,8 +1,8 @@
-package org.spring.boot.autoconfiguration;
+package org.spring.boot.autoconfigure;
 
 import io.minio.MinioClient;
 import okhttp3.HttpUrl;
-import org.spring.boot.autoconfiguration.properties.MinioProperties;
+import org.spring.boot.autoconfigure.properties.MinioProperties;
 import org.spring.minio.client.MinioTemplate;
 import org.spring.minio.client.configuration.MinioPoolConfiguration;
 import org.spring.minio.client.configuration.MinioPoolConfigurationBuilder;

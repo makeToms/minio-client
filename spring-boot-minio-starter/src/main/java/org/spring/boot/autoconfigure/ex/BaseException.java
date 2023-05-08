@@ -1,4 +1,4 @@
-package org.spring.boot.autoconfiguration.ex;
+package org.spring.boot.autoconfigure.ex;
 
 /**
  * @Author make_

@@ -1,4 +1,4 @@
-package org.spring.boot.autoconfiguration.enums;
+package org.spring.boot.autoconfigure.enums;
 
 /**
  * @Author make_

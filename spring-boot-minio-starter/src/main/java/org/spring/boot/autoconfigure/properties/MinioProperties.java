@@ -1,10 +1,8 @@
-package org.spring.boot.autoconfiguration.properties;
+package org.spring.boot.autoconfigure.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
 
 /**
  * @Author make_

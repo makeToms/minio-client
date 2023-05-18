@@ -3,6 +3,7 @@ package org.spring.boot.autoconfigure.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author make_
@@ -28,6 +29,14 @@ public class MinioProperties {
      * minioadmin
      */
     private String password = "minioadmin";
+    /**
+     * 使用的桶名
+     */
+    private String bucketName = "temp";
+    /**
+     * 文件隔离前缀，在同一个桶中生效
+     */
+    private Map<String, String> pathPrefix;
     /***********以下为连接池操作**********/
     /**
      * 对象池中管理的最多对象个数。默认值是8
@@ -154,4 +163,23 @@ public class MinioProperties {
         this.buckets = buckets;
     }
 
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    public Map<String, String> getPathPrefix() {
+        return pathPrefix;
+    }
+
+    public void setPathPrefix(Map<String, String> pathPrefix) {
+        this.pathPrefix = pathPrefix;
+    }
 }

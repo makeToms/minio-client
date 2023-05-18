@@ -1,6 +1,6 @@
 package org.spring.boot.autoconfigure.enums;
 
-
+import lombok.Getter;
 import org.spring.boot.autoconfigure.ex.FileException;
 
 /**
@@ -8,6 +8,7 @@ import org.spring.boot.autoconfigure.ex.FileException;
  *
  * @author make_
  */
+@Getter
 public enum MinioTypeEnum {
 
     /**
@@ -462,7 +463,7 @@ public enum MinioTypeEnum {
      * @param fileType 文件类型例如:image/png
      * @return
      */
-    public static String suffix(String fileType) {
+    public static String getSuffix(String fileType) {
         MinioTypeEnum[] values = MinioTypeEnum.values();
         for (MinioTypeEnum value : values) {
             if (value.getMimeType().equals(fileType)) {
@@ -472,15 +473,5 @@ public enum MinioTypeEnum {
         throw new FileException(ExceptionEnum.FILE_TYPE_ERROR);
     }
 
-    public String getExtension() {
-        return extension;
-    }
 
-    public String getExplain() {
-        return explain;
-    }
-
-    public String getMimeType() {
-        return mimeType;
-    }
 }

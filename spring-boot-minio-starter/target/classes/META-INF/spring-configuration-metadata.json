@@ -8,6 +8,13 @@
   ],
   "properties": [
     {
+      "name": "spring.io.minio.bucket-name",
+      "type": "java.lang.String",
+      "description": "使用的桶名",
+      "sourceType": "org.spring.boot.autoconfigure.properties.MinioProperties",
+      "defaultValue": "temp"
+    },
+    {
       "name": "spring.io.minio.buckets",
       "type": "java.util.List<java.lang.String>",
       "description": "桶名",
@@ -61,6 +68,19 @@
       "description": "minioadmin",
       "sourceType": "org.spring.boot.autoconfigure.properties.MinioProperties",
       "defaultValue": "minioadmin"
+    },
+    {
+      "name": "spring.io.minio.path-prefix",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "文件隔离前缀，在同一个桶中生效",
+      "sourceType": "org.spring.boot.autoconfigure.properties.MinioProperties"
+    },
+    {
+      "name": "spring.io.minio.port",
+      "type": "java.lang.Integer",
+      "description": "端口",
+      "sourceType": "org.spring.boot.autoconfigure.properties.MinioProperties",
+      "defaultValue": 9000
     },
     {
       "name": "spring.io.minio.time-between-eviction-runs-millis",

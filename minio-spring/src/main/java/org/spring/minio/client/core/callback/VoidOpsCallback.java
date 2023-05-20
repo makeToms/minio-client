@@ -1,6 +1,11 @@
 package org.spring.minio.client.core.callback;
 
 import io.minio.MinioClient;
+import io.minio.errors.*;
+
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @Author make_
@@ -16,6 +21,6 @@ public interface VoidOpsCallback {
      * @param client
      * @return
      */
-     void callback(MinioClient client);
+    void callback(MinioClient client);
 
 }

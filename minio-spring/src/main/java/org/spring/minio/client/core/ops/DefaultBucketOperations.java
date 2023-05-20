@@ -34,5 +34,18 @@ public interface DefaultBucketOperations {
      */
     public Optional<Bucket> getBucketByBucketName(String bucketName);
 
+    /**
+     * 删除桶
+     *
+     * @param bucketName
+     */
     void removeBucket(String bucketName);
+
+    /**
+     * 为桶设置策略
+     *
+     * @param version          策略唯一标识
+     * @param bucketNamePolicy 桶名策略，例如:temp-bucket/*
+     */
+    void setPolicy(String version, String bucketNamePolicy);
 }

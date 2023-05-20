@@ -1,7 +1,12 @@
 spring:
   io:
     minio:
-      host: 114.132.177.185
-      port: 9000
       username: minioadmin
       password: minioadmin
+      host: 114.132.177.185
+      port: 9000
+      bucket-name: "spire-object"
+      path-prefix:
+        video: video
+        file: file
+        price: price

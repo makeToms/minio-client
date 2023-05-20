@@ -1,15 +1,17 @@
 package org.spring.minio.client.core.ops;
 
-import io.minio.BucketExistsArgs;
-import io.minio.MakeBucketArgs;
-import io.minio.MinioClient;
-import io.minio.RemoveBucketArgs;
+import io.minio.*;
+import io.minio.errors.*;
 import io.minio.messages.Bucket;
+import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spring.minio.client.MinioTemplate;
 import org.spring.minio.client.ex.MinioConnectException;
 
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +45,7 @@ public class BucketOperations implements DefaultBucketOperations {
             }
         });
     }
+
 
     /**
      * 获取所有桶
@@ -80,6 +83,7 @@ public class BucketOperations implements DefaultBucketOperations {
 
     /**
      * 删除桶
+     *
      * @param bucketName
      */
     @Override
@@ -95,7 +99,20 @@ public class BucketOperations implements DefaultBucketOperations {
                     log.debug(bucketName + "桶不存在");
                 }
             } catch (Exception e) {
-                log.debug(bucketName + "删除信息失败: ",e);
+                log.debug(bucketName + "删除信息失败: ", e);
+            }
+        });
+    }
+
+    @SneakyThrows
+    @Override
+    public void setPolicy(String version, String bucketNamePolicy) {
+        String policy = "{\"Version\": \"2012-10-17\",\"Statement\": [{\"Action\": [\"s3:GetObject\"],\"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"*\"]},\"Resource\": [\"arn:aws:s3:::" + bucketNamePolicy + "]}]}";
+        minioTemplate.execute(client -> {
+            try {
+                client.setBucketPolicy(SetBucketPolicyArgs.builder().bucket(bucketNamePolicy).config(policy).build());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         });
     }

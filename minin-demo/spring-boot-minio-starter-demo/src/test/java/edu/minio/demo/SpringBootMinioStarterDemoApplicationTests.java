@@ -13,6 +13,7 @@ class SpringBootMinioStarterDemoApplicationTests {
     @Test
     void contextLoads() {
         minioTemplate.opsForBucket().createBucket("sadass");
+        minioTemplate.opsForBucket().setPolicy("sadass");
     }
 
 }

@@ -107,7 +107,7 @@ public class BucketOperations implements DefaultBucketOperations {
     @SneakyThrows
     @Override
     public void setPolicy(String version, String bucketNamePolicy) {
-        String policy = "{\"Version\": \"2012-10-17\",\"Statement\": [{\"Action\": [\"s3:GetObject\"],\"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"*\"]},\"Resource\": [\"arn:aws:s3:::" + bucketNamePolicy + "]}]}";
+        String policy = "{\"Version\": \"" + version + "\",\"Statement\": [{\"Action\": [\"s3:GetObject\"],\"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"*\"]},\"Resource\": [\"arn:aws:s3:::" + bucketNamePolicy + "]}]}";
         minioTemplate.execute(client -> {
             try {
                 client.setBucketPolicy(SetBucketPolicyArgs.builder().bucket(bucketNamePolicy).config(policy).build());

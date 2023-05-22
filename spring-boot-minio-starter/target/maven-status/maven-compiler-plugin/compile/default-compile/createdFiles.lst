@@ -1,7 +1,0 @@
-org\spring\boot\autoconfigure\enums\MinioTypeEnum.class
-org\spring\boot\autoconfigure\ex\FileException.class
-org\spring\boot\autoconfigure\enums\ExceptionEnum.class
-org\spring\boot\autoconfigure\properties\MinioProperties.class
-org\spring\boot\autoconfigure\MinioAutoConfiguration.class
-org\spring\boot\autoconfigure\ex\BaseException.class
-META-INF\spring-configuration-metadata.json

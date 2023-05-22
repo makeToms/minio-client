@@ -10,5 +10,9 @@ spring:
         file: file
         price: price
       bucket-strategy-name:
-        private-spire-bucket: false
-        public-spire-bucket: true
+        auth:
+          bucket-name: spire-object-private
+          public-value: false
+        default:
+          bucket-name: spire-object-public
+          public-value: true

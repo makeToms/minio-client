@@ -1,6 +1,7 @@
 package edu.minio.demo;
 
 import org.junit.jupiter.api.Test;
+import org.spring.boot.autoconfigure.properties.BucketProperties;
 import org.spring.boot.autoconfigure.properties.MinioProperties;
 import org.spring.minio.client.MinioTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,11 @@ class SpringBootMinioStarterDemoApplicationTests {
 
     @Test
     void contextLoads() {
-        Map<String, Boolean> bucketStrategyName = minioProperties.getBucketStrategyName();
-        Set<String> keySet = bucketStrategyName.keySet();
-        keySet.forEach(item -> {
-            minioTemplate.opsForBucket().createBucket(item);
-            if (bucketStrategyName.get(item)) {
-                minioTemplate.opsForBucket().setPolicy(item);
+        Map<String, BucketProperties> bucketStrategyName = minioProperties.getBucketStrategyName();
+        bucketStrategyName.forEach((item, value) -> {
+            minioTemplate.opsForBucket().createBucket(value.getBucketName());
+            if (value.getPublicValue()) {
+                minioTemplate.opsForBucket().setPolicy(value.getBucketName());
             }
         });
     }

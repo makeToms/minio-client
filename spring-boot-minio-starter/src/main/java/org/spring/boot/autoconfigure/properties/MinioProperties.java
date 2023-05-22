@@ -30,9 +30,9 @@ public class MinioProperties {
      */
     private String password = "minioadmin";
     /**
-     * 使用的桶名策略，比如:[auth:auth-spire-bucket,public:public-spire-bucket]
+     * 使用的桶名策略
      */
-    private Map<String, Boolean> bucketStrategyName;
+    private Map<String, BucketProperties> bucketStrategyName;
     /**
      * 文件隔离前缀，在同一个桶中生效
      */
@@ -167,11 +167,11 @@ public class MinioProperties {
         this.port = port;
     }
 
-    public Map<String, Boolean> getBucketStrategyName() {
+    public Map<String, BucketProperties> getBucketStrategyName() {
         return bucketStrategyName;
     }
 
-    public void setBucketStrategyName(Map<String, Boolean> bucketStrategyName) {
+    public void setBucketStrategyName(Map<String, BucketProperties> bucketStrategyName) {
         this.bucketStrategyName = bucketStrategyName;
     }
 

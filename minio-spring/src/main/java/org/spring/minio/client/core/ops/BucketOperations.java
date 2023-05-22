@@ -106,11 +106,11 @@ public class BucketOperations implements DefaultBucketOperations {
 
     @SneakyThrows
     @Override
-    public void setPolicy(String version, String bucketNamePolicy) {
-        String policy = "{\"Version\": \"" + version + "\",\"Statement\": [{\"Action\": [\"s3:GetObject\"],\"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"*\"]},\"Resource\": [\"arn:aws:s3:::" + bucketNamePolicy + "]}]}";
+    public void setPolicy(String bucketName) {
+        String policy = "{\"Version\": \"2012-10-17\",\"Statement\": [{\"Action\": [\"s3:GetObject\"],\"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"*\"]},\"Resource\": [\"arn:aws:s3:::"+bucketName+"/*\"]}]}";
         minioTemplate.execute(client -> {
             try {
-                client.setBucketPolicy(SetBucketPolicyArgs.builder().bucket(bucketNamePolicy).config(policy).build());
+                client.setBucketPolicy(SetBucketPolicyArgs.builder().bucket(bucketName).config(policy).build());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

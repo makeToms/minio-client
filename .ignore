@@ -116,3 +116,5 @@ test-output
 
 #jRebel
 rebel.xml
+
+*.class

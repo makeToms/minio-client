@@ -5,8 +5,10 @@ spring:
       password: minioadmin
       host: 114.132.177.185
       port: 9000
-      bucket-name: "spire-object"
       path-prefix:
         video: video
         file: file
         price: price
+      bucket-strategy-name:
+        private-spire-bucket: false
+        public-spire-bucket: true

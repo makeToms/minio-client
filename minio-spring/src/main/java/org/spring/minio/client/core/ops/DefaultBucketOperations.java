@@ -44,8 +44,7 @@ public interface DefaultBucketOperations {
     /**
      * 为桶设置策略
      *
-     * @param version          策略唯一标识
-     * @param bucketNamePolicy 桶名策略，例如:temp-bucket/*
+     * @param bucketName 桶名策略，例如:temp-bucket
      */
-    void setPolicy(String version, String bucketNamePolicy);
+    void setPolicy( String bucketName);
 }
